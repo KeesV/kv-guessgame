@@ -1,6 +1,9 @@
 FROM balenalib/raspberrypi3-python:3
 
+ADD requirements.txt requirements.txt
 ADD led-desk.py led-desk.py
+
+RUN pip3 install -r requirements.txt
 
 ENV MQTT_HOST=broker.lan
 ENV MQTT_BASE_TOPIC=led-desk-downstairs
