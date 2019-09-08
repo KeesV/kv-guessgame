@@ -1,0 +1,19 @@
+script:
+  select_guessgame_animals_question:
+    sequence:
+      - service: input_text.set_value
+        data_template:
+          entity_id: input_text.guessgame_expected_answer
+          value: >
+            {% set ns = namespace(question=(range(0,2)|random)) %}
+            {% if ns.question == 0 %}horse{% endif %}
+            {% if ns.question == 1 %}cow{% endif %}
+      - service: script.ask_guessgame_animals_question
+
+  ask_guessgame_animals_question:
+    sequence:
+      - service: script.speak
+        data_template:
+          text: >
+            {% if states('input_text.guessgame_expected_answer') == 'horse' %}Zoek het paard!{% endif %}
+            {% if states('input_text.guessgame_expected_answer') == 'cow' %}Zoek de koe!{% endif %}

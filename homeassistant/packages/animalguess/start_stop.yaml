@@ -1,0 +1,98 @@
+automation:
+  - alias: guessgame_start
+    trigger:
+      - platform: event
+        event_type: magic_card_scanned
+        event_data:
+          card_type: event
+    condition:
+      condition: and
+      conditions:
+        - condition: template
+          value_template: "{{ trigger.event.data.card_uri.split('|')[0] == 'start'}}"
+        - condition: state
+          entity_id: input_text.guessgame_state
+          state: "idle"
+    action:
+      - service: script.guessgame_start
+        data_template:
+          collection: "{{ trigger.event.data.card_uri.split('|')[1] }}"
+
+  - alias: guessgame_start_already_started
+    trigger:
+      - platform: event
+        event_type: magic_card_scanned
+        event_data:
+          card_type: event
+    condition:
+      condition: and
+      conditions:
+        - condition: template
+          value_template: "{{ trigger.event.data.card_uri.split('|')[0] == 'start'}}"
+        - condition: template
+          value_template: "{{ states('input_text.guessgame_state') != 'idle' }}"
+    action:
+      - service: script.speak
+        data_template:
+          text: "We zitten al middenin een spel joh!"
+
+  - alias: guessgame_stop
+    trigger:
+      - platform: event
+        event_type: magic_card_scanned
+        event_data:
+          card_type: event
+    condition:
+      condition: and
+      conditions:
+        - condition: template
+          value_template: "{{ trigger.event.data.card_uri.split('|')[0] == 'stop'}}"
+        - condition: template
+          value_template: "{{ states('input_text.guessgame_state') != 'idle' }}"
+    action:
+      - service: script.guessgame_stop
+
+script:
+  ## Call with
+  ## {{ collection }} (collection from which the question should be pulled)
+  guessgame_start:
+    sequence:
+      - service: input_text.set_value
+        data:
+          entity_id: input_text.guessgame_state
+          value: "starting"
+      - service: input_text.set_value
+        data_template:
+          entity_id: input_text.guessgame_collection
+          value: "{{ collection }}"
+      - service: script.speak
+        data_template:
+          text: "Laten we een spelletje spelen!"
+      - delay:
+          seconds: 2
+      - service: script.speak
+        data_template:
+          text: >
+            {% if collection == 'animals' %}We gaan dieren zoeken!{% endif %}
+      - service: input_text.set_value
+        data:
+          entity_id: input_text.guessgame_state
+          value: "question"
+
+  guessgame_stop:
+    sequence:
+      - service: script.speak
+        data_template:
+          text: "Ok, we gaan stoppen. Ik vond het leuk om met je te spelen!"
+      - service: input_text.set_value
+        data:
+          entity_id: input_text.guessgame_state
+          value: "idle"
+      - service: input_text.set_value
+        data:
+          entity_id: input_text.guessgame_collection
+          value: ""
+      - service: input_text.set_value
+        data:
+          entity_id: input_text.guessgame_expected_answer
+          value: ""

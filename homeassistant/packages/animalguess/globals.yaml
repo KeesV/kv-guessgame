@@ -5,3 +5,6 @@ input_text:
   guessgame_collection:
     name: Guessgame collection
     initial: ""
+  guessgame_expected_answer:
+    name: Guessgame expected answer
+    initial: ""

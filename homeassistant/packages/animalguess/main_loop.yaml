@@ -1,0 +1,80 @@
+automation:
+  - alias: ask_guessgame_question
+    trigger:
+      - platform: state
+        entity_id: input_text.guessgame_state
+        to: "question"
+    action:
+      - service: script.speak
+        data_template:
+          text: "Hier is een vraag!"
+      - delay:
+          seconds: 2
+      - service_template: >
+          {% if states('input_text.guessgame_collection') == 'animals' %}script.select_guessgame_animals_question{% endif %}
+      - service: input_text.set_value
+        data:
+          entity_id: input_text.guessgame_state
+          value: "waiting_answer"
+
+  - alias: receive_guessgame_answer_correct
+    trigger:
+      - platform: event
+        event_type: magic_card_scanned
+        event_data:
+          card_type: event
+    condition:
+      condition: and
+      conditions:
+        - condition: template
+          value_template: "{{ trigger.event.data.card_uri.split('|')[0] == 'answer'}}"
+        - condition: state
+          entity_id: input_text.guessgame_state
+          state: "waiting_answer"
+        - condition: template
+          value_template: "{{ trigger.event.data.card_uri.split('|')[1] == states('input_text.guessgame_collection')}}"
+        - condition: template
+          value_template: "{{ trigger.event.data.card_uri.split('|')[2] == states('input_text.guessgame_expected_answer')}}"
+    action:
+      - service: script.speak
+        data:
+          text: "Dat antwoord is goed! Hier komt de volgende!"
+      - service: input_text.set_value
+        data:
+          entity_id: input_text.guessgame_expected_answer
+          value: ""
+      - delay:
+          seconds: 2
+      - service: input_text.set_value
+        data:
+          entity_id: input_text.guessgame_state
+          value: "question"
+
+  - alias: receive_guessgame_answer_incorrect
+    trigger:
+      - platform: event
+        event_type: magic_card_scanned
+        event_data:
+          card_type: event
+    condition:
+      condition: and
+      conditions:
+        - condition: template
+          value_template: "{{ trigger.event.data.card_uri.split('|')[0] == 'answer'}}"
+        - condition: state
+          entity_id: input_text.guessgame_state
+          state: "waiting_answer"
+        - condition: or
+          conditions:
+            - condition: template
+              value_template: "{{ trigger.event.data.card_uri.split('|')[1] != states('input_text.guessgame_collection')}}"
+            - condition: template
+              value_template: "{{ trigger.event.data.card_uri.split('|')[2] != states('input_text.guessgame_expected_answer')}}"
+    action:
+      - service: script.speak
+        data:
+          text: "Dat antwoord is jammer genoeg niet goed! Probeer het nog maar een keer!"
+      - delay:
+          seconds: 1
+      - service_template: >
+          {% if states('input_text.guessgame_collection') == 'animals' %}script.ask_guessgame_animals_question{% endif %}
