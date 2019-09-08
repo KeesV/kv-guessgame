@@ -1,0 +1,143 @@
+{
+    "data": [
+        {
+            "last_seen": "2019-09-07T14:25:35.515041+00:00",
+            "state": {
+                "attributes": {
+                    "editable": true,
+                    "friendly_name": "Kees",
+                    "id": "9b04bdc43664495d9eb4f032b0e96a97",
+                    "user_id": "312e1d76cb774f10a300b36066972aca"
+                },
+                "context": {
+                    "id": "371af44f36584009a7b0a9af125c0678",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "person.kees",
+                "last_changed": "2019-09-07T14:24:54.802887+00:00",
+                "last_updated": "2019-09-07T14:25:00.389200+00:00",
+                "state": "unknown"
+            }
+        },
+        {
+            "last_seen": "2019-09-07T14:25:35.515041+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "ask_animalguess_question",
+                    "last_triggered": "2019-09-06T14:22:06.078417+00:00"
+                },
+                "context": {
+                    "id": "accb81bb0f914f49a1375743f996abe1",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.ask_animalguess_question",
+                "last_changed": "2019-09-07T14:24:54.806680+00:00",
+                "last_updated": "2019-09-07T14:24:54.806680+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-09-07T14:25:35.515041+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "guessgame_start",
+                    "last_triggered": "2019-09-07T14:25:17.200383+00:00"
+                },
+                "context": {
+                    "id": "30ac356252de4e6db84057a37afe37d3",
+                    "parent_id": "e8c205a47d5044548c769fce6635190d",
+                    "user_id": null
+                },
+                "entity_id": "automation.guessgame_start",
+                "last_changed": "2019-09-07T14:24:54.810211+00:00",
+                "last_updated": "2019-09-07T14:25:17.200505+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-09-07T14:25:35.515041+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Guessgame state",
+                    "max": 100,
+                    "min": 0,
+                    "mode": "text",
+                    "pattern": null
+                },
+                "context": {
+                    "id": "30ac356252de4e6db84057a37afe37d3",
+                    "parent_id": "e8c205a47d5044548c769fce6635190d",
+                    "user_id": null
+                },
+                "entity_id": "input_text.guessgame_state",
+                "last_changed": "2019-09-07T14:25:17.189719+00:00",
+                "last_updated": "2019-09-07T14:25:17.189719+00:00",
+                "state": "starting"
+            }
+        },
+        {
+            "last_seen": "2019-09-07T14:25:35.515041+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Guessgame collection",
+                    "max": 100,
+                    "min": 0,
+                    "mode": "text",
+                    "pattern": null
+                },
+                "context": {
+                    "id": "30ac356252de4e6db84057a37afe37d3",
+                    "parent_id": "e8c205a47d5044548c769fce6635190d",
+                    "user_id": null
+                },
+                "entity_id": "input_text.guessgame_collection",
+                "last_changed": "2019-09-07T14:25:17.194962+00:00",
+                "last_updated": "2019-09-07T14:25:17.194962+00:00",
+                "state": "animals"
+            }
+        },
+        {
+            "last_seen": "2019-09-06T14:22:40.673904+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "start_animalguess",
+                    "last_triggered": "2019-09-06T14:22:06.064964+00:00"
+                },
+                "context": {
+                    "id": "4f36beed18634ea598bfad54cf1bb6f6",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.start_animalguess",
+                "last_changed": "2019-09-06T14:20:59.412743+00:00",
+                "last_updated": "2019-09-06T14:22:06.065271+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-09-06T14:22:40.673904+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Animalguess state",
+                    "max": 100,
+                    "min": 0,
+                    "mode": "text",
+                    "pattern": null
+                },
+                "context": {
+                    "id": "71358840290d4a47a117cdb8d21ea244",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "input_text.animalguess_state",
+                "last_changed": "2019-09-06T14:22:06.076034+00:00",
+                "last_updated": "2019-09-06T14:22:06.076034+00:00",
+                "state": "waiting_answer"
+            }
+        }
+    ],
+    "key": "core.restore_state",
+    "version": 1
+}

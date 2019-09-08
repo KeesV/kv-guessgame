@@ -1,0 +1,7 @@
+input_text:
+  guessgame_state:
+    name: Guessgame state
+    initial: "idle"
+  guessgame_collection:
+    name: Guessgame collection
+    initial: ""

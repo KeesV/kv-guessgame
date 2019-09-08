@@ -1,0 +1,69 @@
+{
+    "data": {
+        "credentials": [
+            {
+                "auth_provider_id": null,
+                "auth_provider_type": "homeassistant",
+                "data": {
+                    "username": "kees"
+                },
+                "id": "88ea64828a514f0ea311614ddc47aab7",
+                "user_id": "312e1d76cb774f10a300b36066972aca"
+            }
+        ],
+        "groups": [
+            {
+                "id": "system-admin",
+                "name": "Administrators"
+            },
+            {
+                "id": "system-users",
+                "name": "Users"
+            },
+            {
+                "id": "system-read-only",
+                "name": "Read Only"
+            }
+        ],
+        "refresh_tokens": [
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "http://localhost:8123/",
+                "client_name": null,
+                "created_at": "2019-09-06T13:28:03.458475+00:00",
+                "id": "8955a4a340b146ed8255fc654124e75c",
+                "jwt_key": "62fc50bc1c46fb89f5936f0a82de3c20eaea54c1c97f7ea7832a7615a4ff454f62b6794748de220a25acaf24cad31cd5b332207a1faabdac609e4e05e81acb35",
+                "last_used_at": "2019-09-07T14:19:48.535502+00:00",
+                "last_used_ip": "172.18.0.1",
+                "token": "de062d8212c8aea597fecd7afa30a30d146cbbdb5f90ec49a8959073f6321b7c8a523703bb70f8ddd62e10dfcb0aaf92f152f577693b7b752b753a2255eeddba",
+                "token_type": "normal",
+                "user_id": "312e1d76cb774f10a300b36066972aca"
+            }
+        ],
+        "users": [
+            {
+                "group_ids": [
+                    "system-admin"
+                ],
+                "id": "d21e95e9626b4024944ca5988071b54b",
+                "is_active": true,
+                "is_owner": false,
+                "name": "Home Assistant Cloud",
+                "system_generated": true
+            },
+            {
+                "group_ids": [
+                    "system-admin"
+                ],
+                "id": "312e1d76cb774f10a300b36066972aca",
+                "is_active": true,
+                "is_owner": true,
+                "name": "Kees",
+                "system_generated": false
+            }
+        ]
+    },
+    "key": "auth",
+    "version": 1
+}

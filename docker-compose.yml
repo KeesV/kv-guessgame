@@ -1,0 +1,19 @@
+version: "2.3"
+services:
+  homeassistant:
+    image: homeassistant/home-assistant:0.98.1
+    depends_on:
+      mosquitto:
+        condition: service_started
+    volumes:
+      - "D:/Git/kv-animalguess/homeassistant:/config"
+    ports:
+      - 8123:8123
+    networks:
+      - default
+  mosquitto:
+    image: eclipse-mosquitto:1.6.2
+    ports:
+      - "1883:1883"
+    networks:
+      - default
