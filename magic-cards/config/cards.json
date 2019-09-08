@@ -1,0 +1,42 @@
+[
+  {
+    "code": "2a0015c3da",
+    "type": "event",
+    "action": "Home Assistant",
+    "artURL": "https://media.istockphoto.com/vectors/wooden-sign-board-drawing-of-start-text-vector-id873027934",
+    "title": "Guessgame Start",
+    "subtitle": "Animals",
+    "uri": "start|animals",
+    "id": 1567944357
+  },
+  {
+    "code": "2900a89bc5",
+    "type": "event",
+    "action": "Home Assistant",
+    "artURL": "https://image.flaticon.com/icons/png/512/57/57964.png",
+    "title": "Guessgame Stop",
+    "subtitle": "",
+    "uri": "stop",
+    "id": 1567944390
+  },
+  {
+    "code": "2a0015c3ff",
+    "type": "event",
+    "action": "Home Assistant",
+    "artURL": "http://pasosvendrell.com/wp-content/uploads/2019/07/cute-cartoon-cow-popular-cute-cartoon-cow-wall-sticker-flower-home-decoration-vinyl-hollow-out-animal-wall-decal-for-cute-cartoon-wallpaper-for-girl.jpg",
+    "title": "Guessgame Answer",
+    "subtitle": "Animals - Cow",
+    "uri": "answer|animals|cow",
+    "id": 1567944453
+  },
+  {
+    "code": "2a0015c3b8",
+    "type": "event",
+    "action": "Home Assistant",
+    "artURL": "https://images-na.ssl-images-amazon.com/images/I/71-sntKQ0YL._SL1500_.jpg",
+    "title": "Guessgame Answer",
+    "subtitle": "Animals - Horse",
+    "uri": "answer|animals|horse",
+    "id": 1567944502
+  }
+]
