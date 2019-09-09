@@ -1,10 +1,33 @@
 import paho.mqtt.client as mqtt
 import uuid
 import os
+import RPi.GPIO as GPIO
 
 client_name = "led-desk-" + str(uuid.uuid4())
 host_name = os.getenv("MQTT_HOST")
 base_topic = os.getenv("MQTT_BASE_TOPIC")
+
+# RGB LED pin configuration
+pinRed = 17
+pinGreen = 27
+pinBlue = 22
+
+# GPIO setup.
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+
+# Zet de GPIO pinnen als uitgang.
+GPIO.setup(pinRed, GPIO.OUT)
+GPIO.setup(pinGreen, GPIO.OUT)
+GPIO.setup(pinBlue, GPIO.OUT)
+
+# Gebruik PWM op de pinnen.
+red = GPIO.PWM(pinRed, 1000)
+green = GPIO.PWM(pinGreen, 1000)
+blue = GPIO.PWM(pinBlue, 1000)
+red.start(0)
+green.start(0)
+blue.start(0)
 
 mqttClient = mqtt.Client(client_name)
 
@@ -69,4 +92,7 @@ mqttClient.on_message = on_message
 mqttClient.connect(host_name)
 mqttClient.subscribe(base_topic + "/command")
 
-mqttClient.loop_forever()
+try:
+    mqttClient.loop_forever()
+finally:
+    GPIO.cleanup()
