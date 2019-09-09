@@ -1,0 +1,16 @@
+script:
+  ## Call with: {{ text }}
+  speak:
+    sequence:
+      - service: mqtt.publish
+        data_template:
+          topic: animalguess/speak
+          payload_template: "{{ text }}"
+
+  ## Call with: {{ command }} where command = START/STOP/WAIT/WAIT_SHIMMER/CORRECT/INCORRECT":
+  led_desk:
+    sequence:
+      - service: mqtt.publish
+        data_template:
+          topic: led-desk-downstairs/command
+          payload_template: "{{ command }}"

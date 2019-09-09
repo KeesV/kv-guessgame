@@ -65,6 +65,9 @@ script:
         data_template:
           entity_id: input_text.guessgame_collection
           value: "{{ collection }}"
+      - service: script.led_desk
+        data:
+          command: "START"
       - service: script.speak
         data_template:
           text: "Laten we een spelletje spelen!"
@@ -81,6 +84,9 @@ script:
 
   guessgame_stop:
     sequence:
+      - service: script.led_desk
+        data:
+          command: "STOP"
       - service: script.speak
         data_template:
           text: "Ok, we gaan stoppen. Ik vond het leuk om met je te spelen!"

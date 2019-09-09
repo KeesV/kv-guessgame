@@ -1,3 +1,6 @@
+timer:
+  guessgame_reask:
+
 automation:
   - alias: ask_guessgame_question
     trigger:
@@ -10,12 +13,18 @@ automation:
           text: "Hier is een vraag!"
       - delay:
           seconds: 2
-      - service_template: >
-          {% if states('input_text.guessgame_collection') == 'animals' %}script.select_guessgame_animals_question{% endif %}
+      - service: script.select_guessgame_question
+      - service: script.led_desk
+        data:
+          command: "WAIT"
       - service: input_text.set_value
         data:
           entity_id: input_text.guessgame_state
           value: "waiting_answer"
+      - service: timer.start
+        data:
+          entity_id: timer.guessgame_reask
+          duration: 20
 
   - alias: receive_guessgame_answer_correct
     trigger:
@@ -36,6 +45,9 @@ automation:
         - condition: template
           value_template: "{{ trigger.event.data.card_uri.split('|')[2] == states('input_text.guessgame_expected_answer')}}"
     action:
+      - service: script.led_desk
+        data:
+          command: "CORRECT"
       - service: script.speak
         data:
           text: "Dat antwoord is goed! Hier komt de volgende!"
@@ -71,10 +83,48 @@ automation:
             - condition: template
               value_template: "{{ trigger.event.data.card_uri.split('|')[2] != states('input_text.guessgame_expected_answer')}}"
     action:
+      - service: script.led_desk
+        data:
+          command: "INCORRECT"
       - service: script.speak
         data:
           text: "Dat antwoord is jammer genoeg niet goed! Probeer het nog maar een keer!"
       - delay:
           seconds: 1
+      - service: script.ask_guessgame_question
+      - delay:
+          seconds: 1
+      - service: script.led_desk
+        data:
+          command: "WAIT"
+      - service: timer.start
+        data:
+          entity_id: timer.guessgame_reask
+          duration: 20
+
+  - alias: reask_question
+    trigger:
+      - platform: event
+        event_type: timer.finished
+        event_data:
+          entity_id: timer.guessgame_reask
+    action:
+      - service: script.led_desk
+        data:
+          command: "WAIT_SHIMMER"
+      - service: script.ask_guessgame_question
+      - service: timer.start
+        data:
+          entity_id: timer.guessgame_reask
+          duration: 20
+
+script:
+  select_guessgame_question:
+    sequence:
+      - service_template: >
+          {% if states('input_text.guessgame_collection') == 'animals' %}script.select_guessgame_animals_question{% endif %}
+
+  ask_guessgame_question:
+    sequence:
       - service_template: >
           {% if states('input_text.guessgame_collection') == 'animals' %}script.ask_guessgame_animals_question{% endif %}
