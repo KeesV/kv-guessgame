@@ -1,19 +1,21 @@
 version: "2.3"
 services:
-  homeassistant:
-    image: homeassistant/home-assistant:0.98.1
-    depends_on:
-      mosquitto:
-        condition: service_started
+  magic-cards:
+    image: jonmaddox/magic-cards
     volumes:
-      - "D:/Git/kv-animalguess/homeassistant:/config"
+      - "./magic-cards/config:/usr/src/app/config"
     ports:
-      - 8123:8123
+      - 5000:5000
+    restart: always
+    devices:
+      - "/dev/input/event0:/dev/input/event0"
     networks:
       - default
-  mosquitto:
-    image: eclipse-mosquitto:1.6.2
-    ports:
-      - "1883:1883"
+  led-desk:
+    image: kverhaar/led-desk
+    build: ./led-desk
+    environment:
+      - MQTT_HOST=172.20.10.7
+      - MQTT_BASE_TOPIC=led-desk-downstairs
     networks:
       - default
