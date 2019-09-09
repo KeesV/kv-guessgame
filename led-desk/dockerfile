@@ -8,4 +8,4 @@ RUN pip3 install -r requirements.txt
 ENV MQTT_HOST=broker.lan
 ENV MQTT_BASE_TOPIC=led-desk-downstairs
 
-ENTRYPOINT [ "python", "led-desk.py"]
+ENTRYPOINT [ "python", "-u", "led-desk.py"]
