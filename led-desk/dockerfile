@@ -3,6 +3,8 @@ FROM balenalib/raspberrypi3-python:3
 ENV MQTT_HOST=broker.lan
 ENV MQTT_BASE_TOPIC=led-desk-downstairs
 
+RUN apt-get update && apt-get install -y build-essential
+
 ADD requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 
