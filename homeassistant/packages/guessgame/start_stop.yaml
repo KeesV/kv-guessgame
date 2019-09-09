@@ -52,6 +52,14 @@ automation:
     action:
       - service: script.guessgame_stop
 
+  - alias: stop_when_reask_count_exceeded
+    trigger:
+      - platform: numeric_state
+        entity_id: input_number.guessgame_reask_count
+        above: 2
+    action:
+      - service: script.guessgame_stop
+
 script:
   ## Call with
   ## {{ collection }} (collection from which the question should be pulled)

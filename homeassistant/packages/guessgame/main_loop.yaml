@@ -21,7 +21,11 @@ automation:
       - service: timer.start
         data:
           entity_id: timer.guessgame_reask
-          duration: 20
+          duration: 10
+      - service: input_number.set_value
+        data:
+          entity_id: input_number.guessgame_reask_count
+          value: 0
 
   - alias: receive_guessgame_answer_correct
     trigger:
@@ -97,7 +101,11 @@ automation:
       - service: timer.start
         data:
           entity_id: timer.guessgame_reask
-          duration: 20
+          duration: 10
+      - service: input_number.set_value
+        data:
+          entity_id: input_number.guessgame_reask_count
+          value: 0
 
   - alias: reask_question
     trigger:
@@ -113,7 +121,11 @@ automation:
       - service: timer.start
         data:
           entity_id: timer.guessgame_reask
-          duration: 20
+          duration: 10
+      - service: input_number.set_value
+        data_template:
+          entity_id: input_number.guessgame_reask_count
+          value: "{{ (states('input_number.guessgame_reask_count') | int) + 1}}"
 
 script:
   select_guessgame_question:

@@ -1,213 +1,190 @@
 {
     "data": [
         {
-            "last_seen": "2019-09-09T14:05:19.003781+00:00",
+            "last_seen": "2019-09-09T14:24:14.219425+00:00",
             "state": {
                 "attributes": {
                     "editable": true,
                     "friendly_name": "Kees",
                     "id": "9b04bdc43664495d9eb4f032b0e96a97",
+                    "source": "person.kees",
                     "user_id": "312e1d76cb774f10a300b36066972aca"
                 },
                 "context": {
-                    "id": "fe7eb11db3be4315ac59558d81519432",
+                    "id": "1c732c18b56d41a5bd5b3967b94cc68b",
                     "parent_id": null,
                     "user_id": null
                 },
                 "entity_id": "person.kees",
-                "last_changed": "2019-09-09T13:50:13.327899+00:00",
-                "last_updated": "2019-09-09T13:50:18.889576+00:00",
+                "last_changed": "2019-09-09T14:24:08.607702+00:00",
+                "last_updated": "2019-09-09T14:24:08.607702+00:00",
                 "state": "unknown"
             }
         },
         {
-            "last_seen": "2019-09-09T14:05:19.003781+00:00",
+            "last_seen": "2019-09-09T14:24:14.219425+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "guessgame_start_already_started",
                     "last_triggered": "2019-09-09T13:54:09.347011+00:00"
                 },
                 "context": {
-                    "id": "ddc666b8bd574473b10bc846d9bfd72d",
-                    "parent_id": "6eb8a67607f94696b979e84d1bae888c",
+                    "id": "f494d084127e46e98fc26e7c36fcce82",
+                    "parent_id": null,
                     "user_id": null
                 },
                 "entity_id": "automation.guessgame_start_already_started",
-                "last_changed": "2019-09-09T13:50:13.329229+00:00",
-                "last_updated": "2019-09-09T13:54:09.347165+00:00",
+                "last_changed": "2019-09-09T14:24:08.610414+00:00",
+                "last_updated": "2019-09-09T14:24:08.610414+00:00",
                 "state": "on"
             }
         },
         {
-            "last_seen": "2019-09-09T14:05:19.003781+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "ask_guessgame_question",
-                    "last_triggered": "2019-09-09T14:02:41.053848+00:00"
-                },
-                "context": {
-                    "id": "dae556fa9c66456ba7bbff6b986559e2",
-                    "parent_id": "36c6b611bf00466d8a0bdedf305dc479",
-                    "user_id": null
-                },
-                "entity_id": "automation.ask_guessgame_question",
-                "last_changed": "2019-09-09T13:50:13.330113+00:00",
-                "last_updated": "2019-09-09T14:02:41.054031+00:00",
-                "state": "on"
-            }
-        },
-        {
-            "last_seen": "2019-09-09T14:05:19.003781+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "reask_question",
-                    "last_triggered": "2019-09-09T14:03:26.035129+00:00"
-                },
-                "context": {
-                    "id": "3e738e3e49234705a2868881f4031050",
-                    "parent_id": "4d99f49a353349bead25e556696be81c",
-                    "user_id": null
-                },
-                "entity_id": "automation.reask_question",
-                "last_changed": "2019-09-09T13:50:13.330842+00:00",
-                "last_updated": "2019-09-09T14:03:26.035270+00:00",
-                "state": "on"
-            }
-        },
-        {
-            "last_seen": "2019-09-09T14:05:19.003781+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "guessgame_start",
-                    "last_triggered": "2019-09-09T14:02:38.055419+00:00"
-                },
-                "context": {
-                    "id": "36c6b611bf00466d8a0bdedf305dc479",
-                    "parent_id": "b772a8fa4a614539bcf1d8c0afa6644c",
-                    "user_id": null
-                },
-                "entity_id": "automation.guessgame_start",
-                "last_changed": "2019-09-09T13:50:13.332322+00:00",
-                "last_updated": "2019-09-09T14:02:38.055557+00:00",
-                "state": "on"
-            }
-        },
-        {
-            "last_seen": "2019-09-09T14:05:19.003781+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "guessgame_stop",
-                    "last_triggered": "2019-09-09T14:03:17.234359+00:00"
-                },
-                "context": {
-                    "id": "4e05256f5c3c4e91bf8b932effbf7cda",
-                    "parent_id": "ad9001a91393480592564c82d97b1ecf",
-                    "user_id": null
-                },
-                "entity_id": "automation.guessgame_stop",
-                "last_changed": "2019-09-09T13:50:13.333326+00:00",
-                "last_updated": "2019-09-09T14:03:17.234475+00:00",
-                "state": "on"
-            }
-        },
-        {
-            "last_seen": "2019-09-09T14:05:19.003781+00:00",
+            "last_seen": "2019-09-09T14:24:14.219425+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "receive_guessgame_answer_incorrect",
                     "last_triggered": "2019-09-08T13:37:51.730876+00:00"
                 },
                 "context": {
-                    "id": "aed03dd7221045bcbfb2e727ff123ee9",
+                    "id": "06525d4f61804fc78bfdccd81be102b1",
                     "parent_id": null,
                     "user_id": null
                 },
                 "entity_id": "automation.receive_guessgame_answer_incorrect",
-                "last_changed": "2019-09-09T13:50:13.334507+00:00",
-                "last_updated": "2019-09-09T13:50:13.334507+00:00",
+                "last_changed": "2019-09-09T14:24:08.611886+00:00",
+                "last_updated": "2019-09-09T14:24:08.611886+00:00",
                 "state": "on"
             }
         },
         {
-            "last_seen": "2019-09-09T14:05:19.003781+00:00",
+            "last_seen": "2019-09-09T14:24:14.219425+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "guessgame_stop",
+                    "last_triggered": "2019-09-09T14:03:17.234359+00:00"
+                },
+                "context": {
+                    "id": "150224ebc54e438a8962d45d49a2fb85",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.guessgame_stop",
+                "last_changed": "2019-09-09T14:24:08.612914+00:00",
+                "last_updated": "2019-09-09T14:24:08.612914+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-09-09T14:24:14.219425+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "reask_question",
+                    "last_triggered": "2019-09-09T14:03:26.035129+00:00"
+                },
+                "context": {
+                    "id": "96d5ac9e906b4b58b7d7f498a8451f2a",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.reask_question",
+                "last_changed": "2019-09-09T14:24:08.613885+00:00",
+                "last_updated": "2019-09-09T14:24:08.613885+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-09-09T14:24:14.219425+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "ask_guessgame_question",
+                    "last_triggered": "2019-09-09T14:02:41.053848+00:00"
+                },
+                "context": {
+                    "id": "9d98cfe7b11843ba973666d3b5523510",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.ask_guessgame_question",
+                "last_changed": "2019-09-09T14:24:08.614808+00:00",
+                "last_updated": "2019-09-09T14:24:08.614808+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-09-09T14:24:14.219425+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "stop_when_reask_count_exceeded",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "41e0c48b0c064ab5bbdb6c6a77c6ec10",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.stop_when_reask_count_exceeded",
+                "last_changed": "2019-09-09T14:24:08.615689+00:00",
+                "last_updated": "2019-09-09T14:24:08.615689+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-09-09T14:24:14.219425+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "guessgame_start",
+                    "last_triggered": "2019-09-09T14:02:38.055419+00:00"
+                },
+                "context": {
+                    "id": "121b39396b0b405bb9a08f6575e70004",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.guessgame_start",
+                "last_changed": "2019-09-09T14:24:08.616622+00:00",
+                "last_updated": "2019-09-09T14:24:08.616622+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-09-09T14:24:14.219425+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "receive_guessgame_answer_correct",
                     "last_triggered": "2019-09-09T13:56:05.108496+00:00"
                 },
                 "context": {
-                    "id": "074880989fd34f569997c34258910363",
-                    "parent_id": "dc20526ce8754afaa7733758bd71e28b",
+                    "id": "20a8f04839194181a7a72a7d80fc8cd3",
+                    "parent_id": null,
                     "user_id": null
                 },
                 "entity_id": "automation.receive_guessgame_answer_correct",
-                "last_changed": "2019-09-09T13:50:13.335557+00:00",
-                "last_updated": "2019-09-09T13:56:05.108648+00:00",
+                "last_changed": "2019-09-09T14:24:08.617554+00:00",
+                "last_updated": "2019-09-09T14:24:08.617554+00:00",
                 "state": "on"
             }
         },
         {
-            "last_seen": "2019-09-09T14:05:19.003781+00:00",
+            "last_seen": "2019-09-09T14:24:14.219425+00:00",
             "state": {
                 "attributes": {
-                    "duration": "0:00:20",
-                    "remaining": "0:00:00"
+                    "duration": "None",
+                    "remaining": "None"
                 },
                 "context": {
-                    "id": "e2c061e3321a4b61b9e6b9c6a6d42768",
+                    "id": "89d1f1c3b01d466ab703dc5f84882315",
                     "parent_id": null,
                     "user_id": null
                 },
                 "entity_id": "timer.guessgame_reask",
-                "last_changed": "2019-09-09T14:03:26.003281+00:00",
-                "last_updated": "2019-09-09T14:03:26.003281+00:00",
+                "last_changed": "2019-09-09T14:24:08.618561+00:00",
+                "last_updated": "2019-09-09T14:24:08.618561+00:00",
                 "state": "idle"
             }
         },
         {
-            "last_seen": "2019-09-09T14:05:19.003781+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Guessgame state",
-                    "max": 100,
-                    "min": 0,
-                    "mode": "text",
-                    "pattern": null
-                },
-                "context": {
-                    "id": "4e05256f5c3c4e91bf8b932effbf7cda",
-                    "parent_id": "ad9001a91393480592564c82d97b1ecf",
-                    "user_id": null
-                },
-                "entity_id": "input_text.guessgame_state",
-                "last_changed": "2019-09-09T14:03:17.203004+00:00",
-                "last_updated": "2019-09-09T14:03:17.203004+00:00",
-                "state": "idle"
-            }
-        },
-        {
-            "last_seen": "2019-09-09T14:05:19.003781+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Guessgame collection",
-                    "max": 100,
-                    "min": 0,
-                    "mode": "text",
-                    "pattern": null
-                },
-                "context": {
-                    "id": "4e05256f5c3c4e91bf8b932effbf7cda",
-                    "parent_id": "ad9001a91393480592564c82d97b1ecf",
-                    "user_id": null
-                },
-                "entity_id": "input_text.guessgame_collection",
-                "last_changed": "2019-09-09T14:03:17.209231+00:00",
-                "last_updated": "2019-09-09T14:03:17.209231+00:00",
-                "state": ""
-            }
-        },
-        {
-            "last_seen": "2019-09-09T14:05:19.003781+00:00",
+            "last_seen": "2019-09-09T14:24:14.219425+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "Guessgame expected answer",
@@ -217,14 +194,78 @@
                     "pattern": null
                 },
                 "context": {
-                    "id": "4e05256f5c3c4e91bf8b932effbf7cda",
-                    "parent_id": "ad9001a91393480592564c82d97b1ecf",
+                    "id": "378c73c4ceef4c4e94e21fb76645c834",
+                    "parent_id": null,
                     "user_id": null
                 },
                 "entity_id": "input_text.guessgame_expected_answer",
-                "last_changed": "2019-09-09T14:03:17.217866+00:00",
-                "last_updated": "2019-09-09T14:03:17.217866+00:00",
+                "last_changed": "2019-09-09T14:24:08.619116+00:00",
+                "last_updated": "2019-09-09T14:24:08.619116+00:00",
                 "state": ""
+            }
+        },
+        {
+            "last_seen": "2019-09-09T14:24:14.219425+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Guessgame state",
+                    "max": 100,
+                    "min": 0,
+                    "mode": "text",
+                    "pattern": null
+                },
+                "context": {
+                    "id": "3d7350a8db9a499c93a8853aa59584c8",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "input_text.guessgame_state",
+                "last_changed": "2019-09-09T14:24:08.619605+00:00",
+                "last_updated": "2019-09-09T14:24:08.619605+00:00",
+                "state": "idle"
+            }
+        },
+        {
+            "last_seen": "2019-09-09T14:24:14.219425+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Guessgame collection",
+                    "max": 100,
+                    "min": 0,
+                    "mode": "text",
+                    "pattern": null
+                },
+                "context": {
+                    "id": "8bc8fa5b3672499c8b94d7469f1d2ee9",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "input_text.guessgame_collection",
+                "last_changed": "2019-09-09T14:24:08.620196+00:00",
+                "last_updated": "2019-09-09T14:24:08.620196+00:00",
+                "state": ""
+            }
+        },
+        {
+            "last_seen": "2019-09-09T14:24:14.219425+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Guessgame reask count",
+                    "initial": 0.0,
+                    "max": 10.0,
+                    "min": 0.0,
+                    "mode": "slider",
+                    "step": 1.0
+                },
+                "context": {
+                    "id": "34adad7b641947fc9cc0cb2b8abe6280",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "input_number.guessgame_reask_count",
+                "last_changed": "2019-09-09T14:24:08.620758+00:00",
+                "last_updated": "2019-09-09T14:24:08.620758+00:00",
+                "state": "0.0"
             }
         },
         {

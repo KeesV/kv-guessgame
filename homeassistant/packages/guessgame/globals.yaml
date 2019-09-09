@@ -9,5 +9,12 @@ input_text:
     name: Guessgame expected answer
     initial: ""
 
+input_number:
+  guessgame_reask_count:
+    name: Guessgame reask count
+    initial: 0
+    min: 0
+    max: 10
+
 timer:
   guessgame_reask:
