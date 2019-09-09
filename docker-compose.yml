@@ -17,6 +17,7 @@ services:
     environment:
       - MQTT_HOST=172.20.10.7
       - MQTT_BASE_TOPIC=led-desk-downstairs
+    restart: always
     devices:
       - "/dev/gpiomem:/dev/gpiomem"
     networks:
