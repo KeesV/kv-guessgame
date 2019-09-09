@@ -1,6 +1,3 @@
-timer:
-  guessgame_reask:
-
 automation:
   - alias: ask_guessgame_question
     trigger:

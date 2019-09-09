@@ -84,6 +84,9 @@ script:
 
   guessgame_stop:
     sequence:
+      - service: timer.cancel
+        data:
+          entity_id: timer.guessgame_reask
       - service: script.led_desk
         data:
           command: "STOP"
