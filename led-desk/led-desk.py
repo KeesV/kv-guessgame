@@ -1,6 +1,7 @@
 import paho.mqtt.client as mqtt
 import uuid
 import os
+import time
 import RPi.GPIO as GPIO
 
 client_name = "led-desk-" + str(uuid.uuid4())
@@ -29,31 +30,121 @@ red.start(0)
 green.start(0)
 blue.start(0)
 
+sleepStep = 0.05
+
 mqttClient = mqtt.Client(client_name)
 
 
 def blink_start():
     print("Blinking start")
+    red.ChangeDutyCycle(0)
+    blue.ChangeDutyCycle(0)
+    for dc in range(0, 101, 5):  # Loop 0 to 100 stepping dc by 5 each loop
+        green.ChangeDutyCycle(dc)
+        time.sleep(sleepStep)  # wait .05 seconds at current LED brightness
+        print(dc)
+    for i in range(0, 3, 1):
+        for dc in range(95, 75, -5):  # Loop 95 to 5 stepping dc down by 5 each loop
+            green.ChangeDutyCycle(dc)
+            time.sleep(sleepStep)  # wait .05 seconds at current LED brightness
+            print(dc)
+        for dc in range(75, 101, 5):  # Loop 95 to 5 stepping dc down by 5 each loop
+            green.ChangeDutyCycle(dc)
+            time.sleep(sleepStep)  # wait .05 seconds at current LED brightness
+            print(dc)
 
 
 def blink_stop():
     print("Blinking stop")
+    green.ChangeDutyCycle(0)
+    blue.ChangeDutyCycle(0)
+    for dc in range(0, 101, 5):  # Loop 0 to 100 stepping dc by 5 each loop
+        red.ChangeDutyCycle(dc)
+        time.sleep(sleepStep)  # wait .05 seconds at current LED brightness
+        print(dc)
+    for i in range(0, 3, 1):
+        for dc in range(95, 75, -5):  # Loop 95 to 5 stepping dc down by 5 each loop
+            red.ChangeDutyCycle(dc)
+            time.sleep(sleepStep)  # wait .05 seconds at current LED brightness
+            print(dc)
+        for dc in range(75, 101, 5):  # Loop 95 to 5 stepping dc down by 5 each loop
+            red.ChangeDutyCycle(dc)
+            time.sleep(sleepStep)  # wait .05 seconds at current LED brightness
+            print(dc)
+    for dc in range(101, 0, -1):  # Loop 0 to 100 stepping dc by 5 each loop
+        red.ChangeDutyCycle(dc)
+        time.sleep(sleepStep)  # wait .05 seconds at current LED brightness
+        print(dc)
 
 
 def blink_wait():
     print("Blinking wait")
+    red.ChangeDutyCycle(0)
+    green.ChangeDutyCycle(0)
+    for dc in range(0, 101, 5):  # Loop 0 to 100 stepping dc by 5 each loop
+        blue.ChangeDutyCycle(dc)
+        time.sleep(sleepStep)  # wait .05 seconds at current LED brightness
+        print(dc)
+    blink_wait_shimmer()
 
 
 def blink_wait_shimmer():
     print("Blinking wait shimmer")
+    for i in range(0, 3, 1):
+        for dc in range(95, 75, -5):  # Loop 95 to 5 stepping dc down by 5 each loop
+            blue.ChangeDutyCycle(dc)
+            time.sleep(sleepStep)  # wait .05 seconds at current LED brightness
+            print(dc)
+        for dc in range(75, 101, 5):  # Loop 95 to 5 stepping dc down by 5 each loop
+            blue.ChangeDutyCycle(dc)
+            time.sleep(sleepStep)  # wait .05 seconds at current LED brightness
+            print(dc)
 
 
 def blink_correct():
     print("Blinking correct")
+    red.ChangeDutyCycle(0)
+    blue.ChangeDutyCycle(0)
+    for dc in range(0, 56, 5):  # Loop 0 to 100 stepping dc by 5 each loop
+        green.ChangeDutyCycle(dc)
+        time.sleep(sleepStep)  # wait .05 seconds at current LED brightness
+        print(dc)
+    for i in range(0, 3, 1):
+        for dc in range(56, 30, -5):  # Loop 95 to 5 stepping dc down by 5 each loop
+            green.ChangeDutyCycle(dc)
+            time.sleep(sleepStep)  # wait .05 seconds at current LED brightness
+            print(dc)
+        for dc in range(30, 56, 5):  # Loop 95 to 5 stepping dc down by 5 each loop
+            green.ChangeDutyCycle(dc)
+            time.sleep(sleepStep)  # wait .05 seconds at current LED brightness
+            print(dc)
+    for dc in range(56, 0, -5):  # Loop 0 to 100 stepping dc by 5 each loop
+        green.ChangeDutyCycle(dc)
+        time.sleep(sleepStep)  # wait .05 seconds at current LED brightness
+        print(dc)
 
 
 def blink_incorrect():
     print("Blinking incorrect")
+    green.ChangeDutyCycle(0)
+    blue.ChangeDutyCycle(0)
+    for dc in range(0, 56, 5):  # Loop 0 to 100 stepping dc by 5 each loop
+        red.ChangeDutyCycle(dc)
+        time.sleep(sleepStep)  # wait .05 seconds at current LED brightness
+        print(dc)
+    for i in range(0, 3, 1):
+        for dc in range(56, 30, -5):  # Loop 95 to 5 stepping dc down by 5 each loop
+            red.ChangeDutyCycle(dc)
+            time.sleep(sleepStep)  # wait .05 seconds at current LED brightness
+            print(dc)
+        for dc in range(30, 56, 5):  # Loop 95 to 5 stepping dc down by 5 each loop
+            red.ChangeDutyCycle(dc)
+            time.sleep(sleepStep)  # wait .05 seconds at current LED brightness
+            print(dc)
+    for dc in range(56, 0, -5):  # Loop 0 to 100 stepping dc by 5 each loop
+        red.ChangeDutyCycle(dc)
+        time.sleep(sleepStep)  # wait .05 seconds at current LED brightness
+        print(dc)
 
 
 def on_connect(client, userdata, flags, rc):
