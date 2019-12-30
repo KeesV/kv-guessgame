@@ -15,7 +15,7 @@ services:
     image: kverhaar/led-desk
     build: ./led-desk
     environment:
-      - MQTT_HOST=172.20.10.7
+      - MQTT_HOST=home.lan
       - MQTT_BASE_TOPIC=led-desk-downstairs
     restart: always
     devices:

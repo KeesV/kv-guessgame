@@ -1,10 +1,10 @@
 {
     "Home Assistant": {
         "type": "home_assistant",
-        "host": "172.20.10.7",
+        "host": "home.lan",
         "port": "8123",
         "ssl": false,
         "verify_ssl": true,
-        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI4MDBmZjU4M2M3YzE0OGZhYTY3M2ViNWU5NmI3YTRkZCIsImlhdCI6MTU2Nzk0MzU4MCwiZXhwIjoxODgzMzAzNTgwfQ.-8-za6xc8oHnYckTHZEFETYdkd1qdTfQ_I3YuGBdZ-A"
+        "token": ""
     }
 }
